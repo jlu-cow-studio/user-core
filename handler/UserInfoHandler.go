@@ -21,7 +21,7 @@ func (h *Handler) UserInfo(ctx context.Context, req *user_core.UserInfoReq) (res
 
 	cmd := redis.DB.Get(redis.GetUserTokenKey(req.Base.Token))
 	if cmd.Err() != nil {
-		res.Base.Message = err.Error()
+		res.Base.Message = cmd.Err().Error()
 		res.Base.Code = "401"
 		return res, nil
 	}
