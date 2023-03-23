@@ -6,6 +6,7 @@ import (
 	"github.com/jlu-cow-studio/common/dal/rpc/base"
 	"github.com/jlu-cow-studio/common/dal/rpc/user_core"
 	"github.com/jlu-cow-studio/common/model/dao_struct/mysql"
+	mysql_model "github.com/jlu-cow-studio/common/model/dao_struct/mysql"
 	"github.com/jlu-cow-studio/user-core/biz"
 )
 
@@ -31,7 +32,7 @@ func (h *Handler) UserRegister(ctx context.Context, req *user_core.UserRegisterR
 	user := &mysql.User{
 		Username: req.UserInfo.Username,
 		Password: req.UserInfo.Password,
-		Role:     req.UserInfo.Role,
+		Role:     mysql_model.RoleNormal,
 		Province: req.UserInfo.Province,
 		City:     req.UserInfo.City,
 		District: req.UserInfo.District,
