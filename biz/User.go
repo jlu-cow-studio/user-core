@@ -28,3 +28,8 @@ func GetUserInfo(username string) (dao.User, error) {
 
 	return *user, nil
 }
+
+func InsertUser(user *dao.User) error {
+	conn := mysql.GetDBConn()
+	return conn.Table("user").Create(user).Error
+}

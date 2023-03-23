@@ -21,7 +21,7 @@ func TestUserLogin(t *testing.T) {
 
 	s := &Handler{}
 	req := &user_core.UserLoginReq{
-		Username: "wangmei",
+		Username: "wayne",
 		Password: "123456",
 	}
 
