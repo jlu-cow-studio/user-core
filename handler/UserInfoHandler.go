@@ -17,6 +17,7 @@ func (h *Handler) UserInfo(ctx context.Context, req *user_core.UserInfoReq) (res
 		Base: &base.BaseRes{
 			Code: "499",
 		},
+		UserInfo: new(user_core.UserInfo),
 	}
 
 	cmd := redis.DB.Get(redis.GetUserTokenKey(req.Base.Token))
