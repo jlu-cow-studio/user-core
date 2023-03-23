@@ -14,19 +14,24 @@ import (
 	"github.com/sanity-io/litter"
 )
 
-func TestUserInfo(t *testing.T) {
+func TestUserAuth(t *testing.T) {
 	log.Println("hello")
 	discovery.Init()
 	mysql.Init()
 	redis.Init()
-	h := &Handler{}
-	req := &user_core.UserInfoReq{
+
+	// user, _ := biz.GetUserInfo("wayne")
+	// fmt.Println(litter.Sdump(user))
+
+	s := &Handler{}
+	token := "2485ee8f-1a3c-45ed-bf85-79a7caf59c38"
+	req := &user_core.UserAuthReq{
 		Base: &base.BaseReq{
-			Token: "2485ee8f-1a3c-45ed-bf85-79a7caf59c38",
+			Token: token,
 		},
+		Role: "producer",
 	}
 
-	res, _ := h.UserInfo(context.Background(), req)
-
+	res, _ := s.UserAuth(context.Background(), req)
 	fmt.Println(litter.Sdump(res))
 }
