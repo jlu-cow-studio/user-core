@@ -22,4 +22,4 @@ echo "New version: $new_version"
 git add .
 git commit -m "$1"
 git tag $new_version
-git push $2 master $new_version
+git push origin "$2" $new_version
