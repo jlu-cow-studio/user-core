@@ -9,7 +9,7 @@ import (
 	"github.com/jlu-cow-studio/common/dal/redis"
 	"github.com/jlu-cow-studio/common/dal/rpc/base"
 	"github.com/jlu-cow-studio/common/dal/rpc/user_core"
-	cache "github.com/jlu-cow-studio/common/model/dao_struct/redis"
+	redis_model "github.com/jlu-cow-studio/common/model/dao_struct/redis"
 	"github.com/jlu-cow-studio/user-core/biz"
 )
 
@@ -47,7 +47,7 @@ func (h *Handler) UserLogin(ctx context.Context, req *user_core.UserLoginReq) (r
 	}
 
 	token := uuid.NewString()
-	info := &cache.UserInfo{
+	info := &redis_model.UserInfo{
 		Uid:      user.Uid,
 		Username: user.Username,
 		Role:     user.Role,
