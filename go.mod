@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/google/uuid v1.3.0
-	github.com/jlu-cow-studio/common v0.2.28
+	github.com/jlu-cow-studio/common v0.2.66
 	github.com/sanity-io/litter v1.5.5
 	google.golang.org/grpc v1.54.0
 )
