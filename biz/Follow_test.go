@@ -19,3 +19,21 @@ func TestAddUserFollow(t *testing.T) {
 
 	fmt.Println(AddUserFollow("182", "322"))
 }
+
+func TestFollowingList(t *testing.T) {
+	mysql.Init()
+
+	fmt.Println(FollowingList("322", 0, 2))
+}
+
+func TestFollowerList(t *testing.T) {
+	mysql.Init()
+
+	fmt.Println(FollowerList("322", 0, 2))
+}
+
+func TestFollowCount(t *testing.T) {
+	mysql.Init()
+
+	fmt.Println(FollowCount("322"))
+}
