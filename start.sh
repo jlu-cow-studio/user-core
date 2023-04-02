@@ -5,7 +5,7 @@ CONTAINER_NAME=user-core
 
 SERVICE_NAME=cowstudio/user-core
 SERVICE_PORT=3081
-SERVICE_ADDRESS=cowstudio.wayne-lee.cn
+SERVICE_ADDRESS=$(curl -s http://ipecho.net/plain)
 SIDECAR_PORT=4081
 
 # 构建镜像
